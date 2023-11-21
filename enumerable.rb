@@ -8,12 +8,12 @@ def my_each(array)
 
   for i in 0..length - 1
     puts "Before yield: #{array[i]}"
-    yield(array[i])
+    yield(array[i], i)
     puts "After yield: #{array[i]}"
   end
 end
 arr = [1, 2, 3, 4, 5]
 
-my_each(arr) do |item|
-  puts "Inside block: #{item + 1}"
+my_each(arr) do |item, index|
+  puts "Inside block: #{item + 1}. Index: #{index}"
 end
